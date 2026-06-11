@@ -24,7 +24,7 @@ href="/static/style.css">
 Real-Time Web Threat Detection & Security Monitoring Platform
 </h3>
 
-<form action="/scan"
+<form action="/"
 method="POST">
 
 
@@ -41,6 +41,36 @@ required></textarea>
 Scan
 </button>
 
+{% if result %}
+
+<div class="result-card">
+
+<h2>🛡 Scan Result</h2>
+
+<p>
+Status:
+<strong>{{ result.status }}</strong>
+</p>
+
+<p>
+Attack Type:
+<strong>{{ result.attack }}</strong>
+</p>
+
+<p>
+Risk Level:
+<strong>{{ result.risk }}</strong>
+</p>
+
+
+<p>
+{{ result.message }}
+</p>
+
+</div>
+
+{% endif %}
+
 
 </form>
 
@@ -48,9 +78,7 @@ Scan
 
 {% if result %}
 
-<h2>
-Result: {{result}}
-</h2>
+
 
 {% endif %}
 

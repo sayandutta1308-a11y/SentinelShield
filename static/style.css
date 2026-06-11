@@ -165,3 +165,37 @@ h2{
     color:#22c55e;
 
 }
+
+.result-card{
+
+margin-top:30px;
+padding:25px;
+width:450px;
+
+background:
+rgba(0,0,0,0.45);
+
+border:1px solid #00eaff;
+
+border-radius:18px;
+
+box-shadow:
+0 0 25px rgba(0,238,255,0.4);
+
+text-align:left;
+
+}
+
+
+.result-card h2{
+
+color:#00eaff;
+
+}
+
+
+.result-card strong{
+
+color:#00ff99;
+
+}
