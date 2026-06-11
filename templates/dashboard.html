@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>
+SentinelShield Dashboard
+</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+
+<h1>
+🛡 SentinelShield SOC Dashboard
+</h1>
+
+
+<h3>
+Real-Time Threat Intelligence & Attack Monitoring
+</h3>
+
+
+<table>
+
+
+<tr>
+
+<th>ID</th>
+
+<th>Source IP</th>
+
+<th>Threat Type</th>
+
+<th>Severity</th>
+
+<th>Payload</th>
+
+<th>Detected Time</th>
+
+
+</tr>
+
+
+{% for log in logs %}
+
+<tr>
+
+
+<td>
+{{log.id}}
+</td>
+
+
+<td>
+{{log.ip_address}}
+</td>
+
+
+<td>
+⚠️ {{log.attack_type}}
+</td>
+
+
+<td>
+
+{% if log.attack_type=="SQL Injection" %}
+
+🔴 HIGH
+
+{% elif log.attack_type=="XSS Attack" %}
+
+🟠 MEDIUM
+
+{% else %}
+
+🟢 LOW
+
+{% endif %}
+
+</td>
+
+
+<td>
+{{log.payload}}
+</td>
+
+
+<td>
+{{log.time}}
+</td>
+
+
+</tr>
+
+{% endfor %}
+
+
+</table>
+
+
+<a href="/">
+← Back To Scanner
+</a>
+
+
+</body>
+
+</html>

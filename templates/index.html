@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>SentinelShield</title>
+
+<link rel="stylesheet"
+href="/static/style.css">
+
+</head>
+
+
+<body>
+
+
+<h1>
+🛡 SentinelShield
+</h1>
+
+
+<h3>
+Real-Time Web Threat Detection & Security Monitoring Platform
+</h3>
+
+<form action="/scan"
+method="POST">
+
+
+<textarea 
+name="payload"
+placeholder="Enter request data"
+required></textarea>
+
+
+<br>
+
+
+<button type="submit">
+Scan
+</button>
+
+
+</form>
+
+
+
+{% if result %}
+
+<h2>
+Result: {{result}}
+</h2>
+
+{% endif %}
+
+
+<br>
+
+<a href="/dashboard">
+View Security Dashboard
+</a>
+
+<br>
+<br>
+
+<h3>
+Monitoring • Detection • Logging • Protection
+</h3>
+
+</body>
+
+</html>
